@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-package person;
-
-service PersonService {
-  rpc findPerson() returns (string);
-}

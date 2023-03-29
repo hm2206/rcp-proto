@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package auth;
+
+service PersonService {
+  rpc ListPerson(PersonListParams) returns (PersonEntityArray);
+  rpc FindPerson(PersonFindParams) returns (PersonEntity);
+}
+
+message PersonFindParams {
+  string id = 1;
+  string documentNumber = 2;
+}
+
+message PersonListParams {
+  string id = 1;
+  string documentNumber = 2;
+  string querySearch = 3;
+}
+
+message PersonEntity {
+  int32 id = 1;
+  string prefix = 2;
+  string name = 3;
+  string lastname = 4;
+  string secondaryName = 5;
+  string fullname = 6;
+  string documentTypeId = 7;
+  string documentNumber = 8;
+  string badgeId = 9;
+  string dateOfBirth = 10;
+  int32 age = 11;
+  string gender = 12;
+  string phone = 13;
+  string maritalStatus = 14;
+  string emailContact = 15;
+  string address = 16;
+}
+
+message PersonEntityArray {
+  repeated PersonEntity data = 1;
+  int32 count = 2;
+}
+
